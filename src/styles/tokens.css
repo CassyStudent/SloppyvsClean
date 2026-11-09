@@ -1,4 +1,4 @@
-/* Figma Components (3:25) and Frame 47 (4:6). */
+/* Figma Components (3:25), Frame 47 (4:6), and Choose a service (7:114). */
 :root {
   --color-surface: #fff;
   --color-canvas: #f5f3ef;
@@ -28,6 +28,7 @@
   --time-slot-selected-width: 70px;
   --input-width: 320px;
   --bar-width: 390px;
+  --booking-screen-height: 844px;
   --service-card-width: 350px;
   --summary-width: 318px;
   --overview-width: 908px;
@@ -57,9 +58,11 @@
   --font-size-body: 15px;
   --font-size-button: 16px;
   --font-size-title: 20px;
+  --font-size-screen-title: 28px;
   --line-height-badge: 18px;
   --line-height-small: 20px;
   --line-height-body: 22px;
   --line-height-button: 24px;
   --line-height-title: 28px;
+  --line-height-screen-title: 34px;
 }

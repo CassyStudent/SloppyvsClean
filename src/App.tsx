@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import Frame47 from './components/Frame47'
 import ComponentsOverview from './components/ComponentsOverview'
+import ChooseAService from './components/ChooseAService'
 import './App.css'
 
 function App() {
   const [bookingRequested, setBookingRequested] = useState(false)
-  if (window.location.pathname !== '/repair') return <ComponentsOverview />
+  if (window.location.pathname === '/components') return <ComponentsOverview />
+  if (window.location.pathname !== '/repair') return <ChooseAService />
   return (
     <main className="component-preview">
       <Frame47 onBook={() => setBookingRequested(true)} />
