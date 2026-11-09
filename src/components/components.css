@@ -74,6 +74,7 @@
   line-height: var(--line-height-body);
 }
 .input__field::placeholder { color: var(--color-text-muted); opacity: 1; }
+.input__field:focus::placeholder { opacity: 0; }
 .input--focus .input__field, .input__field:focus { outline: none; border: var(--focus-width) solid var(--color-action); }
 .input .input__field[aria-invalid='true'] { border-color: var(--color-error); }
 .input__error {
