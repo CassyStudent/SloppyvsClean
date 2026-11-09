@@ -5,6 +5,7 @@
   --color-border: #e4e0d8;
   --color-text: #1a1a1a;
   --color-text-muted: #6b6660;
+  --color-error: #c62828;
   --color-badge: #fcebe4;
   --color-badge-text: #b23e16;
   --color-action: #e8552b;
@@ -22,6 +23,10 @@
   --radius-button: 12px;
   --radius-pill: 999px;
   --opacity-disabled: 0.5;
+  --service-card-lift: var(--space-1);
+  --service-card-shadow: 0 8px 20px rgb(26 26 26 / 12%);
+  --motion-card-duration: 180ms;
+  --motion-card-easing: ease-out;
   --button-primary-width: 162px;
   --button-secondary-width: 164px;
   --time-slot-width: 72px;

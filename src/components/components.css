@@ -75,6 +75,13 @@
 }
 .input__field::placeholder { color: var(--color-text-muted); opacity: 1; }
 .input--focus .input__field, .input__field:focus { outline: none; border: var(--focus-width) solid var(--color-action); }
+.input .input__field[aria-invalid='true'] { border-color: var(--color-error); }
+.input__error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
 .top-bar {
   display: flex;
   align-items: center;
@@ -103,8 +110,24 @@
   color: var(--color-text);
   text-align: left;
   cursor: pointer;
+  transition: transform var(--motion-card-duration) var(--motion-card-easing),
+    box-shadow var(--motion-card-duration) var(--motion-card-easing);
 }
 .service-card--selected { border: var(--focus-width) solid var(--color-action); }
+@media (hover: hover) and (pointer: fine) {
+  .service-card:not(:disabled):hover {
+    transform: translateY(calc(-1 * var(--service-card-lift)));
+    box-shadow: var(--service-card-shadow);
+  }
+}
+.service-card:not(:disabled):focus-visible {
+  transform: translateY(calc(-1 * var(--service-card-lift)));
+  box-shadow: var(--service-card-shadow);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card { transition: none; }
+  .service-card:not(:disabled):is(:hover, :focus-visible) { transform: none; }
+}
 .service-card__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; font-size: var(--font-size-title); font-weight: var(--font-weight-semibold); line-height: var(--line-height-title); }
 .service-card__description { color: var(--color-text-muted); font-size: var(--font-size-body); font-weight: var(--font-weight-regular); line-height: var(--line-height-body); }
 .summary-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); width: var(--summary-width); max-width: 100%; }
