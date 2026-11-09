@@ -3,6 +3,8 @@ import Frame47 from './components/Frame47'
 import ComponentsOverview from './components/ComponentsOverview'
 import ChooseAService from './components/ChooseAService'
 import PickASlot from './components/PickASlot'
+import Confirm from './components/Confirm'
+import type { ContactDetails } from './components/Confirm'
 import type { SlotSelection } from './components/PickASlot'
 import { services } from './data/services'
 import type { Service } from './data/services'
@@ -13,6 +15,7 @@ function App() {
   const [path, setPath] = useState(window.location.pathname)
   const [service, setService] = useState<Service>(services[0])
   const [slot, setSlot] = useState<SlotSelection>({ day: 'Today', time: '16:30' })
+  const [contact, setContact] = useState<ContactDetails>({ name: '', phone: '' })
 
   useEffect(() => {
     const onPopState = () => setPath(window.location.pathname)
@@ -27,7 +30,8 @@ function App() {
   }
 
   if (path === '/components') return <ComponentsOverview />
-  if (path === '/pick-slot') return <PickASlot service={service} selection={slot} onSelectionChange={setSlot} onBack={() => navigate('/')} />
+  if (path === '/confirm') return <Confirm service={service} slot={slot} contact={contact} onContactChange={setContact} onBack={() => navigate('/pick-slot')} />
+  if (path === '/pick-slot') return <PickASlot service={service} selection={slot} onSelectionChange={setSlot} onBack={() => navigate('/')} onContinue={() => navigate('/confirm')} />
   if (path !== '/repair') return <ChooseAService initialSelectedId={service.id} onContinue={nextService => { setService(nextService); navigate('/pick-slot') }} onBack={() => navigate('/components')} />
   return (
     <main className="component-preview">

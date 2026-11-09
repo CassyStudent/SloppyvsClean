@@ -1,0 +1,18 @@
+.confirm-screen__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+.confirm-screen__summary .summary-row,
+.confirm-screen .input { width: 100%; }
+.confirm-screen__summary .summary-row__value { min-width: 0; overflow-wrap: anywhere; }
+.confirm-screen__note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
