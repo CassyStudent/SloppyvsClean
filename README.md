@@ -16,6 +16,7 @@ The app runs at http://localhost:5173. Stop it with Ctrl+C.
 ## Component previews
 
 - `/`: Choose a service screen from Figma node `7:114`.
+- `/pick-slot`: Pick a drop-off time screen from Figma node `7:121`.
 - `/components`: All eight components and their variants from Figma Components, node `3:25`.
 - `/repair`: The original Flat tyre repair booking card, Frame 47, node `4:6`.
 
@@ -25,9 +26,13 @@ React event props. The overview demonstrates selection, disabled states, editabl
 inputs and action callbacks; it does not submit a real booking.
 
 The service screen starts with Flat tyre repair selected. Select any card with
-the mouse or keyboard. Continue reports the chosen service and exposes an
-`onContinue(service)` callback for the next booking step. The back arrow opens
-the component overview. No booking backend or additional screens are included.
+the mouse or keyboard. Continue opens the slot screen with the selected service
+and duration. Back and browser history retain the selections during the current
+visit. The slot screen defaults to Today at 16:30; 09:00 and 10:30 are disabled
+as shown in Figma. Day labels and availability are static design data.
+
+Continue on the slot screen reports the chosen service, day and time and exposes
+an `onContinue(selection)` callback. No booking backend or third screen is included.
 
 ## What is in this repo
 

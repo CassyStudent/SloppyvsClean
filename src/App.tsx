@@ -1,13 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Frame47 from './components/Frame47'
 import ComponentsOverview from './components/ComponentsOverview'
 import ChooseAService from './components/ChooseAService'
+import PickASlot from './components/PickASlot'
+import type { SlotSelection } from './components/PickASlot'
+import { services } from './data/services'
+import type { Service } from './data/services'
 import './App.css'
 
 function App() {
   const [bookingRequested, setBookingRequested] = useState(false)
-  if (window.location.pathname === '/components') return <ComponentsOverview />
-  if (window.location.pathname !== '/repair') return <ChooseAService />
+  const [path, setPath] = useState(window.location.pathname)
+  const [service, setService] = useState<Service>(services[0])
+  const [slot, setSlot] = useState<SlotSelection>({ day: 'Today', time: '16:30' })
+
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname)
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [])
+
+  function navigate(nextPath: string) {
+    window.history.pushState(null, '', nextPath)
+    setPath(nextPath)
+    window.scrollTo(0, 0)
+  }
+
+  if (path === '/components') return <ComponentsOverview />
+  if (path === '/pick-slot') return <PickASlot service={service} selection={slot} onSelectionChange={setSlot} onBack={() => navigate('/')} />
+  if (path !== '/repair') return <ChooseAService initialSelectedId={service.id} onContinue={nextService => { setService(nextService); navigate('/pick-slot') }} onBack={() => navigate('/components')} />
   return (
     <main className="component-preview">
       <Frame47 onBook={() => setBookingRequested(true)} />

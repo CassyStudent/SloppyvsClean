@@ -1,0 +1,37 @@
+.pick-slot-screen__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.pick-slot-screen__group h2 {
+  margin: 0;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-small);
+}
+.pick-slot-screen__options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.pick-slot-screen .time-slot {
+  --slot-label-width: var(--slot-label-time);
+  flex-shrink: 0;
+  min-width: 0;
+  width: calc(var(--slot-label-width) + var(--space-4) * 2 + var(--border-width) * 2);
+}
+.pick-slot-screen .time-slot--selected {
+  width: calc(var(--slot-label-width) + var(--space-4) * 2);
+}
+.pick-slot-screen .pick-slot-screen__day--0 { --slot-label-width: var(--slot-label-today); }
+.pick-slot-screen .pick-slot-screen__day--1 { --slot-label-width: var(--slot-label-tomorrow); }
+.pick-slot-screen .pick-slot-screen__day--2 { --slot-label-width: var(--slot-label-monday); }
+.pick-slot-screen .pick-slot-screen__time--0 { --slot-label-width: var(--slot-label-nine); }
+.pick-slot-screen .pick-slot-screen__time--5 { --slot-label-width: var(--slot-label-last); }
+.pick-slot-screen__note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}

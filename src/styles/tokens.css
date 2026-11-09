@@ -1,4 +1,4 @@
-/* Figma Components (3:25), Frame 47 (4:6), and Choose a service (7:114). */
+/* Figma components, repair card, Choose a service and Pick a slot. */
 :root {
   --color-surface: #fff;
   --color-canvas: #f5f3ef;
@@ -26,6 +26,12 @@
   --button-secondary-width: 164px;
   --time-slot-width: 72px;
   --time-slot-selected-width: 70px;
+  --slot-label-today: 41px;
+  --slot-label-tomorrow: 68px;
+  --slot-label-monday: 49px;
+  --slot-label-time: 38px;
+  --slot-label-nine: 40px;
+  --slot-label-last: 37px;
   --input-width: 320px;
   --bar-width: 390px;
   --booking-screen-height: 844px;
