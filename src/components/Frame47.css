@@ -1,0 +1,81 @@
+.frame47 {
+  width: var(--card-width);
+  max-width: 100%;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: clip;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+.frame47 p, .frame47 h2, .frame47 ul { margin: 0; }
+.frame47__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.frame47__title, .frame47__price {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-title);
+}
+.frame47__description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+.frame47__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.frame47__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+.frame47__badge {
+  display: flex;
+  align-items: center;
+  height: var(--badge-height);
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-badge);
+  background: var(--color-badge);
+  color: var(--color-badge-text);
+  font-size: var(--font-size-badge);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-badge);
+  white-space: nowrap;
+}
+.frame47__badge--duration { width: var(--badge-duration-width); }
+.frame47__badge--bikes { width: var(--badge-bikes-width); }
+.frame47__price {
+  flex-shrink: 0;
+  width: var(--price-width);
+}
+.frame47__availability {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+.frame47__book {
+  min-height: var(--button-height);
+  padding: var(--space-3);
+  border: 0;
+  border-radius: var(--radius-button);
+  background: var(--color-action);
+  color: var(--color-action-text);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-button);
+  cursor: pointer;
+}
+.frame47__book:focus-visible {
+  outline: var(--focus-width) solid var(--color-text);
+  outline-offset: var(--space-1);
+}

@@ -13,6 +13,16 @@ npm run dev
 
 The app runs at http://localhost:5173. Stop it with Ctrl+C.
 
+## Component previews
+
+- `/`: All eight components and their variants from Figma Components, node `3:25`.
+- `/repair`: The original Flat tyre repair booking card, Frame 47, node `4:6`.
+
+Components live in `src/components/`, with shared styles in `components.css` and
+design values in `src/styles/tokens.css`. Each interactive component exposes native
+React event props. The overview demonstrates selection, disabled states, editable
+inputs and action callbacks; it does not submit a real booking.
+
 ## What is in this repo
 
 | File | What it is for |
